@@ -1,3 +1,6 @@
+import random
+import time
+
 def insertionSort(arr, left, right):
     comparisons = 0
 
@@ -105,3 +108,36 @@ def merge(arr, left, mid, right):
         k += 1
 
     return comparisons
+
+
+"""
+Array Creation
+"""
+
+def generateArray(n):
+    arr = []
+
+    for i in range(n):
+        arr.append(random.randint(0, n - 1))
+
+    return arr
+
+sizes = [
+    1000,
+    10000,
+    100000,
+    500000,
+    1000000,
+    5000000,
+    10000000
+]
+
+#Storing the arrays in a dictionary for easier access
+arrayDict = {}
+
+for n in sizes:
+    arrayDict[n] = generateArray(n)
+
+print("All arrays generated.")
+
+#Note: All sorting algorithms are in place. Create a copy of the array when sorting and pass that copy into the sorting function.
